@@ -42,8 +42,8 @@ class MakeTrainingData:
 
         """
         for index, region in enumerate(json_file['regions']):
-            save_image = image[int(region['top']): int(region['under']), int(region['left']): int(region['right'])]
-            save_dir = self.save_path + "/{}/".format(region['label'])
+            save_image: ndarray = image[int(region['top']): int(region['under']), int(region['left']): int(region['right'])]
+            save_dir: str = self.save_path + "/{}/".format(region['label'])
             if not os.path.isdir(save_dir):
                 os.mkdir(save_dir)
             cv2.imwrite(save_dir + "{}_{}.png".format(file_name, index), save_image)

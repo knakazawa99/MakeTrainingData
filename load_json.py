@@ -23,10 +23,10 @@ class LoadJson:
 
             regions = []
             for region in json_load['regions']:
-                bounding_box = self.__get_bounding_box(region)
+                bounding_box: dict = self.__get_bounding_box(region)
                 regions.append(bounding_box)
 
-            json_file = {
+            json_file: dict = {
                 'file_name': json_load['asset']['name'],
                 'regions': regions
             }
@@ -35,14 +35,14 @@ class LoadJson:
 
     @staticmethod
     def __get_bounding_box(region: dict) -> dict:
-        height = region['boundingBox']['height']
-        width = region['boundingBox']['width']
-        top = region['boundingBox']['top']
-        left = region['boundingBox']['left']
-        under = top + height
-        right = left + width
+        height: float = region['boundingBox']['height']
+        width: float = region['boundingBox']['width']
+        top: float = region['boundingBox']['top']
+        left: float = region['boundingBox']['left']
+        under: float = top + height
+        right: float = left + width
 
-        bounding_box = {
+        bounding_box: dict = {
             'under': under,
             'top': top,
             'left': left,

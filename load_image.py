@@ -27,7 +27,7 @@ class LoadImage:
             for file in files:
                 image: ndarray = cv2.imread(file, cv2.IMREAD_COLOR)
                 images.append(image)
-                file_name = os.path.basename(file)
+                file_name: str = os.path.basename(file)
                 file_names.append(file_name)
 
         return images, file_names
