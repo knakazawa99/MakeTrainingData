@@ -46,7 +46,7 @@ class MakeTrainingData:
             save_dir: str = self.save_path + "/{}/".format(region['label'])
             if not os.path.isdir(save_dir):
                 os.mkdir(save_dir)
-            cv2.imwrite(save_dir + "{}_{}.png".format(file_name, index), save_image)
+            cv2.imwrite(save_dir + "{}_{}.{}".format(file_name, index, self.file_extension), save_image)
 
         return None
 
