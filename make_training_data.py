@@ -7,9 +7,9 @@ import cv2
 
 class MakeTrainingData:
 
-    def __init__(self):
+    def __init__(self, file_extension: str = 'bmp'):
         self.save_path: str = os.pardir + '/MakeTrainingData/training_images'
-        self.file_extension: str = 'bmp'
+        self.file_extension: str = file_extension
 
     def execute(self, images: list, file_names: list, json_files: list) -> None:
         return self.__make_training_data(images, file_names, json_files)

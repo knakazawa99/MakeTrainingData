@@ -8,6 +8,8 @@ from MakeTrainingData.make_training_data import MakeTrainingData
 
 sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir))
 
+IMAGE_FILE_EXTENSION = 'bmp'
+
 
 def main() -> None:
     """
@@ -15,9 +17,9 @@ def main() -> None:
     Returns: None
 
     """
-    load_image = LoadImage()
+    load_image = LoadImage(file_extension=IMAGE_FILE_EXTENSION)
     load_json = LoadJson()
-    make_training_data = MakeTrainingData()
+    make_training_data = MakeTrainingData(file_extension=IMAGE_FILE_EXTENSION)
 
     images, file_names = load_image.execute()
     json_files = load_json.execute()
