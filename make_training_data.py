@@ -4,11 +4,13 @@ import os
 from numpy import ndarray
 import cv2
 
+from config import SAVE_TRAINING_DIR
+
 
 class MakeTrainingData:
 
     def __init__(self, file_extension: str = 'bmp'):
-        self.save_path: str = os.pardir + '/MakeTrainingData/training_images'
+        self.save_path: str = SAVE_TRAINING_DIR
         self.file_extension: str = file_extension
 
     def execute(self, images: list, file_names: list, json_files: list) -> None:

@@ -6,11 +6,13 @@ from tqdm import tqdm
 from numpy import ndarray
 import cv2
 
+from config import SAVE_DIR
+
 
 class LoadImage:
 
     def __init__(self, file_extension: str = 'bmp'):
-        self.image_dir: str = os.pardir + '/MakeTrainingData/images'
+        self.image_dir: str = SAVE_DIR
         self.file_extension: str = file_extension
 
     def execute(self) -> tuple:

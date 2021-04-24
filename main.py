@@ -2,9 +2,9 @@
 import os
 import sys
 
-from MakeTrainingData.load_image import LoadImage
-from MakeTrainingData.load_json import LoadJson
-from MakeTrainingData.make_training_data import MakeTrainingData
+from load_image import LoadImage
+from load_json import LoadJson
+from make_training_data import MakeTrainingData
 
 sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir))
 

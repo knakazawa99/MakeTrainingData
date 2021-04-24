@@ -4,11 +4,13 @@ import json
 
 from tqdm import tqdm
 
+from config import JSON_DIR
+
 
 class LoadJson:
 
     def __init__(self):
-        self.file_dir: str = os.pardir + '/MakeTrainingData/json_files'
+        self.file_dir: str = JSON_DIR
         self.file_extension: str = 'json'
 
     def execute(self):
